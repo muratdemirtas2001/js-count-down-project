@@ -39,5 +39,8 @@ let month = futureDate.getMonth();
 // console.log(month);
 month = months[month];
 // console.log(month);
+const date = futureDate.getDate();
+let weekday = futureDate.getDay();
+weekday = weekdays[weekday];
 
-giveaway.textContent = `giveaway ends on ${month} ${year} ${hours}:${minutes}`;
+giveaway.textContent = `giveaway ends on  ${weekday} ,${date} ${month} ${year} ${hours}:${minutes}`;
