@@ -44,3 +44,28 @@ let weekday = futureDate.getDay();
 weekday = weekdays[weekday];
 
 giveaway.textContent = `giveaway ends on  ${weekday} ,${date} ${month} ${year} ${hours}:${minutes}`;
+
+//future date in miliseconds
+const futureTime = futureDate.getTime();
+// console.log(futureTime);
+
+const getRemainingTime = () => {
+  const today = new Date().getTime();
+  // console.log(today);
+  const t = futureTime - today;
+  const oneDay = 24 * 60 * 60 * 1000;
+  const oneHour = 60 * 60 * 1000;
+  const oneMinute = 60 * 1000;
+  let days = t / oneDay;
+  days = Math.floor(days);
+  // console.log(days);
+  let hours = Math.floor((t % oneDay) / oneHour);
+  // console.log(hours);
+  let minutes = Math.floor((t % oneHour) / oneMinute);
+  // console.log(minutes);
+  let seconds = Math.floor((t % oneMinute) / 1000);
+  // console.log(seconds);
+  const values = [days, hours, minutes, seconds];
+};
+
+getRemainingTime();
